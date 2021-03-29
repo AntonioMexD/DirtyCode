@@ -22,8 +22,7 @@ int main()
 			cin >> primerNumero;
 			cout << "Ingrese el segundo numero" << endl;
 			cin >> segundoNumero;
-			cout << primerNumero + segundoNumero << endl;
-			system("pause");
+			cout << primerNumero + segundoNumero << endl;			
 		}
 		if (op == 2)
 		{
@@ -32,8 +31,7 @@ int main()
 			cin >> primerNumero;
 			cout << "Ingrese el segundo numero" << endl;
 			cin >> segundoNumero;
-			cout << primerNumero - segundoNumero << endl;
-			system("pause");
+			cout << primerNumero - segundoNumero << endl;			
 		}
 		if (op == 3)
 		{
@@ -42,8 +40,7 @@ int main()
 			cin >> primerDecimal;
 			cout << "Ingrese el segundo numero" << endl;
 			cin >> segundoDecimal;
-			cout << primerDecimal * segundoDecimal << endl;
-			system("pause");
+			cout << primerDecimal * segundoDecimal << endl;			
 		}
 		if (op == 4)
 		{
@@ -52,9 +49,9 @@ int main()
 			cin >> primerDecimal;
 			cout << "Ingrese el segundo numero" << endl;
 			cin >> segundoDecimal;
-			cout << primerDecimal / segundoDecimal << endl;
-			system("pause");
+			cout << primerDecimal / segundoDecimal << endl;			
 		}
+		system("pause");
 		system("CLS");
 	} while (op!=0);
 

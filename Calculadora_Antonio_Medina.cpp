@@ -1,5 +1,10 @@
 #include <iostream>
 
+#include "Suma.h"
+#include "Resta.h"
+#include "Multiplicacion.h"
+#include "Division.h"
+
 using namespace std;
 
 int operacionMenu()
@@ -14,100 +19,32 @@ int operacionMenu()
 	return operacion;
 }
 
-void leerNumeros(int& primerNumero, int& segundoNumero)
-{
-	cout << "Ingrese el primer numero" << endl;
-	cin >> primerNumero;
-	cout << "Ingrese el segundo numero" << endl;
-	cin >> segundoNumero;
-}
-
-int sumar(int primerNumero, int segundoNumero)
-{
-	return primerNumero + segundoNumero;
-}
-
-int restar(int primerNumero, int segundoNumero)
-{
-	return primerNumero - segundoNumero;
-}
-
-float multiplicar(float primerNumero, float segundoNumero)
-{
-	return primerNumero * segundoNumero;
-}
-
-float dividir(float primerNumero, float segundoNumero)
-{
-	return primerNumero / segundoNumero;
-}
-
-void mostrarTitulo(int operacion)
+OperacionMatematica* obtenerOperacionMatematica(int operacion)
 {
 	switch(operacion)
 	{
-		case 1: 
-		{
-			cout << "SUMA" << endl;
-			break;
-		}
-		case 2: 
-		{
-			cout << "RESTA" << endl;
-			break;
-		}
-		case 3:
-		{
-			cout << "MULTIPLICACION" << endl;
-			break;
-		}
-		case 4:
-		{
-			cout << "DIVSION" << endl;
-			break;
-		}
-	}	
-}
-
-void realizarOperacion(int operacion, int primerNumero, int segundoNumero)
-{
-	switch(operacion)
-	{
-		case 1:
-		{
-			cout << sumar(primerNumero, segundoNumero) << endl;
-			break;
-		}
-		case 2:
-		{
-			cout << restar(primerNumero, segundoNumero) << endl;	
-			break;
-		}
-		case 3:
-		{
-			cout << multiplicar(primerNumero, segundoNumero) << endl;
-			break;
-		}
-		case 4:
-		{
-			cout << dividir(primerNumero, segundoNumero) << endl;
-			break;
-		}
+		case 1: return new Suma();
+		case 2: return new Resta();
+		case 3: return new Multiplicacion();
+		case 4: return new Division();
+		default: return NULL;
 	}
 }
 
 int main()
-{
-	int primerNumero = 0, segundoNumero = 0;	
+{	
 	int operacion;
+	OperacionMatematica* operacionMatematica = NULL;
 	do
 	{	
-		operacion = operacionMenu();		
-		if(operacion != 0)
+		if(operacionMatematica != NULL) delete operacionMatematica;
+		operacion = operacionMenu();
+		operacionMatematica = obtenerOperacionMatematica(operacion);
+		if(operacionMatematica != NULL)
 		{
-			mostrarTitulo(operacion);
-			leerNumeros(primerNumero, segundoNumero);
-			realizarOperacion(operacion, primerNumero, segundoNumero);
+			operacionMatematica->mostrarTitulo();
+			operacionMatematica->leerNumeros();
+			operacionMatematica->mostrarResultado();			
 		}			
 		system("pause");
 		system("CLS");

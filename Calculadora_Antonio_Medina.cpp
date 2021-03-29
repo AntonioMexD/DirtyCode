@@ -38,30 +38,37 @@ int main()
 	do
 	{	
 		operacion = operacionMenu();
-		if (operacion == 1)
+		switch(operacion)
 		{
-			cout << "SUMA" << endl;
-			leerNumeros(primerNumero, segundoNumero);
-			cout << primerNumero + segundoNumero << endl;			
-		}
-		if (operacion == 2)
-		{
-			cout << "RESTA" << endl;
-			leerNumeros(primerNumero, segundoNumero);
-			cout << primerNumero - segundoNumero << endl;			
-		}
-		if (operacion == 3)
-		{
-			cout << "MULTIPLICACION" << endl;
-			leerDecimales(primerDecimal, segundoDecimal);
-			cout << primerDecimal * segundoDecimal << endl;			
-		}
-		if (operacion == 4)
-		{
-			cout << "DIVISION" << endl;
-			leerDecimales(primerDecimal, segundoDecimal);
-			cout << primerDecimal / segundoDecimal << endl;			
-		}
+			case 1:
+			{
+				cout << "SUMA" << endl;
+				leerNumeros(primerNumero, segundoNumero);
+				cout << primerNumero + segundoNumero << endl;
+				break;
+			}
+			case 2:
+			{
+				cout << "RESTA" << endl;
+				leerNumeros(primerNumero, segundoNumero);
+				cout << primerNumero - segundoNumero << endl;	
+				break;
+			}
+			case 3:
+			{
+				cout << "MULTIPLICACION" << endl;
+				leerDecimales(primerDecimal, segundoDecimal);
+				cout << primerDecimal * segundoDecimal << endl;
+				break;
+			}
+			case 4:
+			{
+				cout << "DIVISION" << endl;
+				leerDecimales(primerDecimal, segundoDecimal);
+				cout << primerDecimal / segundoDecimal << endl;	
+				break;
+			}
+		}	
 		system("pause");
 		system("CLS");
 	} while (operacion!=0);

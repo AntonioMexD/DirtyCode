@@ -22,14 +22,6 @@ void leerNumeros(int& primerNumero, int& segundoNumero)
 	cin >> segundoNumero;
 }
 
-void leerDecimales(float& primerDecimal, float& segundoDecimal)
-{
-	cout << "Ingrese el primer numero" << endl;
-	cin >> primerDecimal;
-	cout << "Ingrese el segundo numero" << endl;
-	cin >> segundoDecimal;
-}
-
 int sumar(int primerNumero, int segundoNumero)
 {
 	return primerNumero + segundoNumero;
@@ -40,20 +32,19 @@ int restar(int primerNumero, int segundoNumero)
 	return primerNumero - segundoNumero;
 }
 
-float multiplicar(float primerDecimal, float segundoDecimal)
+float multiplicar(float primerNumero, float segundoNumero)
 {
-	return primerDecimal * segundoDecimal;
+	return primerNumero * segundoNumero;
 }
 
-float dividir(float primerDecimal, float segundoDecimal)
+float dividir(float primerNumero, float segundoNumero)
 {
-	return primerDecimal / segundoDecimal;
+	return primerNumero / segundoNumero;
 }
 
 int main()
 {
-	int primerNumero = 0, segundoNumero = 0;
-	float primerDecimal = 0, segundoDecimal = 0;
+	int primerNumero = 0, segundoNumero = 0;	
 	int operacion;
 	do
 	{	
@@ -77,15 +68,15 @@ int main()
 			case 3:
 			{
 				cout << "MULTIPLICACION" << endl;
-				leerDecimales(primerDecimal, segundoDecimal);
-				cout << multiplicar(primerDecimal, segundoDecimal) << endl;
+				leerNumeros(primerNumero, segundoNumero);
+				cout << multiplicar(primerNumero, segundoNumero) << endl;
 				break;
 			}
 			case 4:
 			{
 				cout << "DIVISION" << endl;
-				leerDecimales(primerDecimal, segundoDecimal);
-				cout << dividir(primerDecimal, segundoDecimal) << endl;
+				leerNumeros(primerNumero, segundoNumero);
+				cout << dividir(primerNumero, segundoNumero) << endl;
 				break;
 			}
 		}	

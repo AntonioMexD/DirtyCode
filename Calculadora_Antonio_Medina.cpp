@@ -69,41 +69,46 @@ void mostrarTitulo(int operacion)
 	}	
 }
 
+void realizarOperacion(int operacion, int primerNumero, int segundoNumero)
+{
+	switch(operacion)
+	{
+		case 1:
+		{
+			cout << sumar(primerNumero, segundoNumero) << endl;
+			break;
+		}
+		case 2:
+		{
+			cout << restar(primerNumero, segundoNumero) << endl;	
+			break;
+		}
+		case 3:
+		{
+			cout << multiplicar(primerNumero, segundoNumero) << endl;
+			break;
+		}
+		case 4:
+		{
+			cout << dividir(primerNumero, segundoNumero) << endl;
+			break;
+		}
+	}
+}
+
 int main()
 {
 	int primerNumero = 0, segundoNumero = 0;	
 	int operacion;
 	do
 	{	
-		operacion = operacionMenu();
-		mostrarTitulo(operacion);
+		operacion = operacionMenu();		
 		if(operacion != 0)
 		{
+			mostrarTitulo(operacion);
 			leerNumeros(primerNumero, segundoNumero);
-		}
-		switch(operacion)
-		{
-			case 1:
-			{	
-				cout << sumar(primerNumero, segundoNumero) << endl;
-				break;
-			}
-			case 2:
-			{				
-				cout << restar(primerNumero, segundoNumero) << endl;	
-				break;
-			}
-			case 3:
-			{
-				cout << multiplicar(primerNumero, segundoNumero) << endl;
-				break;
-			}
-			case 4:
-			{
-				cout << dividir(primerNumero, segundoNumero) << endl;
-				break;
-			}
-		}	
+			realizarOperacion(operacion, primerNumero, segundoNumero);
+		}			
 		system("pause");
 		system("CLS");
 	} while (operacion!=0);

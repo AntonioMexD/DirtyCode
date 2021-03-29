@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-	int n1 = 0, n2 = 0;
-	float x1 = 0, x2 = 0;
+	int primerNumero = 0, segundoNumero = 0;
+	float primerDecimal = 0, segundoDecimal = 0;
 	int op;
 	do
 	{
@@ -19,40 +19,40 @@ int main()
 		{
 			cout << "SUMA" << endl;
 			cout << "Ingrese el primer numero" << endl;
-			cin >> n1;
+			cin >> primerNumero;
 			cout << "Ingrese el segundo numero" << endl;
-			cin >> n2;
-			cout << n1 + n2 << endl;
+			cin >> segundoNumero;
+			cout << primerNumero + segundoNumero << endl;
 			system("pause");
 		}
 		if (op == 2)
 		{
 			cout << "RESTA" << endl;
 			cout << "Ingrese el primer numero" << endl;
-			cin >> n1;
+			cin >> primerNumero;
 			cout << "Ingrese el segundo numero" << endl;
-			cin >> n2;
-			cout << n1 - n2 << endl;
+			cin >> segundoNumero;
+			cout << primerNumero - segundoNumero << endl;
 			system("pause");
 		}
 		if (op == 3)
 		{
 			cout << "MULTIPLICACION" << endl;
 			cout << "Ingrese el primer numero" << endl;
-			cin >> x1;
+			cin >> primerDecimal;
 			cout << "Ingrese el segundo numero" << endl;
-			cin >> x2;
-			cout << x1 * x2 << endl;
+			cin >> segundoDecimal;
+			cout << primerDecimal * segundoDecimal << endl;
 			system("pause");
 		}
 		if (op == 4)
 		{
 			cout << "DIVISION" << endl;
 			cout << "Ingrese el primer numero" << endl;
-			cin >> x1;
+			cin >> primerDecimal;
 			cout << "Ingrese el segundo numero" << endl;
-			cin >> x2;
-			cout << x1 / x2 << endl;
+			cin >> segundoDecimal;
+			cout << primerDecimal / segundoDecimal << endl;
 			system("pause");
 		}
 		system("CLS");

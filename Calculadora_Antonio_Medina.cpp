@@ -7,20 +7,26 @@
 
 using namespace std;
 
-int operacionMenu()
+void borrarPantalla()
 {
-	int operacion;
+	system("pause");
+	system("CLS");
+}
+
+void mostrarMenu()
+{	
 	cout << "Calculadora simple" << endl;
 	cout << "1. Suma" << endl;
 	cout << "2. Resta" << endl;
 	cout << "3. Multiplicacion" << endl;
-	cout << "4. Division" << endl;
-	cin >> operacion;
-	return operacion;
+	cout << "4. Division" << endl;	
 }
 
-OperacionMatematica* obtenerOperacionMatematica(int operacion)
+OperacionMatematica* obtenerOperacionMatematica()
 {
+	int operacion;
+	mostrarMenu();
+	cin >> operacion;
 	switch(operacion)
 	{
 		case 1: return new Suma();
@@ -32,23 +38,17 @@ OperacionMatematica* obtenerOperacionMatematica(int operacion)
 }
 
 int main()
-{	
-	int operacion;
-	OperacionMatematica* operacionMatematica = NULL;
-	do
-	{	
-		if(operacionMatematica != NULL) delete operacionMatematica;
-		operacion = operacionMenu();
-		operacionMatematica = obtenerOperacionMatematica(operacion);
-		if(operacionMatematica != NULL)
-		{
-			operacionMatematica->mostrarTitulo();
-			operacionMatematica->leerNumeros();
-			operacionMatematica->mostrarResultado();			
-		}			
-		system("pause");
-		system("CLS");
-	} while (operacion!=0);
-	
+{		
+	OperacionMatematica* operacionMatematica = NULL;	
+	while(true)
+	{
+		operacionMatematica = obtenerOperacionMatematica();
+		if(operacionMatematica == NULL) break;
+		operacionMatematica->mostrarTitulo();
+		operacionMatematica->leerNumeros();
+		operacionMatematica->mostrarResultado();
+		delete operacionMatematica;
+		borrarPantalla();
+	}
 	return 0;
 }

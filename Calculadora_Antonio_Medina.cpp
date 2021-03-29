@@ -30,6 +30,26 @@ void leerDecimales(float& primerDecimal, float& segundoDecimal)
 	cin >> segundoDecimal;
 }
 
+int sumar(int primerNumero, int segundoNumero)
+{
+	return primerNumero + segundoNumero;
+}
+
+int restar(int primerNumero, int segundoNumero)
+{
+	return primerNumero - segundoNumero;
+}
+
+float multiplicar(float primerDecimal, float segundoDecimal)
+{
+	return primerDecimal * segundoDecimal;
+}
+
+float dividir(float primerDecimal, float segundoDecimal)
+{
+	return primerDecimal / segundoDecimal;
+}
+
 int main()
 {
 	int primerNumero = 0, segundoNumero = 0;
@@ -44,28 +64,28 @@ int main()
 			{
 				cout << "SUMA" << endl;
 				leerNumeros(primerNumero, segundoNumero);
-				cout << primerNumero + segundoNumero << endl;
+				cout << sumar(primerNumero, segundoNumero) << endl;
 				break;
 			}
 			case 2:
 			{
 				cout << "RESTA" << endl;
 				leerNumeros(primerNumero, segundoNumero);
-				cout << primerNumero - segundoNumero << endl;	
+				cout << restar(primerNumero, segundoNumero) << endl;	
 				break;
 			}
 			case 3:
 			{
 				cout << "MULTIPLICACION" << endl;
 				leerDecimales(primerDecimal, segundoDecimal);
-				cout << primerDecimal * segundoDecimal << endl;
+				cout << multiplicar(primerDecimal, segundoDecimal) << endl;
 				break;
 			}
 			case 4:
 			{
 				cout << "DIVISION" << endl;
 				leerDecimales(primerDecimal, segundoDecimal);
-				cout << primerDecimal / segundoDecimal << endl;	
+				cout << dividir(primerDecimal, segundoDecimal) << endl;
 				break;
 			}
 		}	

@@ -42,6 +42,33 @@ float dividir(float primerNumero, float segundoNumero)
 	return primerNumero / segundoNumero;
 }
 
+void mostrarTitulo(int operacion)
+{
+	switch(operacion)
+	{
+		case 1: 
+		{
+			cout << "SUMA" << endl;
+			break;
+		}
+		case 2: 
+		{
+			cout << "RESTA" << endl;
+			break;
+		}
+		case 3:
+		{
+			cout << "MULTIPLICACION" << endl;
+			break;
+		}
+		case 4:
+		{
+			cout << "DIVSION" << endl;
+			break;
+		}
+	}	
+}
+
 int main()
 {
 	int primerNumero = 0, segundoNumero = 0;	
@@ -49,33 +76,30 @@ int main()
 	do
 	{	
 		operacion = operacionMenu();
+		mostrarTitulo(operacion);
+		if(operacion != 0)
+		{
+			leerNumeros(primerNumero, segundoNumero);
+		}
 		switch(operacion)
 		{
 			case 1:
-			{
-				cout << "SUMA" << endl;
-				leerNumeros(primerNumero, segundoNumero);
+			{	
 				cout << sumar(primerNumero, segundoNumero) << endl;
 				break;
 			}
 			case 2:
-			{
-				cout << "RESTA" << endl;
-				leerNumeros(primerNumero, segundoNumero);
+			{				
 				cout << restar(primerNumero, segundoNumero) << endl;	
 				break;
 			}
 			case 3:
 			{
-				cout << "MULTIPLICACION" << endl;
-				leerNumeros(primerNumero, segundoNumero);
 				cout << multiplicar(primerNumero, segundoNumero) << endl;
 				break;
 			}
 			case 4:
 			{
-				cout << "DIVISION" << endl;
-				leerNumeros(primerNumero, segundoNumero);
 				cout << dividir(primerNumero, segundoNumero) << endl;
 				break;
 			}

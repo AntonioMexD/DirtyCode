@@ -1,8 +1,4 @@
-#include <iostream>
-
 #include "Calculadora.h"
-
-using namespace std;
 
 int main()
 {	

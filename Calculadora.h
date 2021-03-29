@@ -4,10 +4,8 @@
 #include <iostream>
 #include <string>
 
-#include "Suma.h"
-#include "Resta.h"
-#include "Multiplicacion.h"
-#include "Division.h"
+#include "Menu.h"
+#include "OperacionMatematica.h"
 
 using namespace std;
 
@@ -16,6 +14,7 @@ class Calculadora
 private:
     OperacionMatematica* operacionMatematica;
     bool activo;
+    Menu menu;
 public:
     Calculadora()
     {
@@ -25,37 +24,15 @@ public:
     ~Calculadora()
     {
         if(operacionMatematica) delete operacionMatematica;
-    }
-    void mostrarOpcionesMenu()
-    {
-        cout << "Calculadora simple" << endl;
-        cout << "1. Suma" << endl;
-        cout << "2. Resta" << endl;
-        cout << "3. Multiplicacion" << endl;
-        cout << "4. Division" << endl;	
-    }
+    }    
     void mostrarMenu()
     {
-        int operacion;
-        mostrarOpcionesMenu();
-        cin >> operacion;
-        operacionMatematica = obtenerOperacionMatematica(operacion);
+        menu.elegirOperacion();
+        operacionMatematica = menu.obtenerOperacionMatematicaElegida();        
     }
     void borrarPantalla()
     {
-        system("pause");
-	    system("CLS");
-    }
-    OperacionMatematica* obtenerOperacionMatematica(int operacion)
-    {
-        switch(operacion)
-        {
-            case 1: return new Suma();
-            case 2: return new Resta();
-            case 3: return new Multiplicacion();
-            case 4: return new Division();
-            default: return NULL;
-        }
+        menu.borrarMenu();
     }
     void realizarOperacionMatematica()
     {
